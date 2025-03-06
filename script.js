@@ -1,23 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    history.scrollRestoration = 'manual';
-    window.scrollTo(0, 0);
-
-    setTimeout(() => {
-        document.querySelector('main').style.opacity = '1';
-        window.scrollTo({ top: 0, behavior: 'instant' });
-    }, 2200);
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            entry.target.classList.toggle('visible', entry.isIntersecting);
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '-50px 0px -50px 0px'
+    document.addEventListener('DOMContentLoaded', () => {
+        // Сброс позиции скролла
+        history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+    
+        // Показ основного контента после интро-анимации
+        setTimeout(() => {
+            document.querySelector('main').style.opacity = '1';
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }, 2200);
+    
+        // Создание IntersectionObserver
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Остановить наблюдение после появления
+                }
+            });
+        }, { threshold: 0.2 });
+    
+        // Отслеживание всех элементов с классом animate-block
+        document.querySelectorAll('.animate-block').forEach(el => observer.observe(el));
     });
-
-    document.querySelectorAll('.animate-block').forEach(el => observer.observe(el));
-
+    
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         const bamboo = document.querySelector('.bamboo-pattern');
