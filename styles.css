@@ -50,11 +50,27 @@ body {
 }
 
 .logo img {
-    width: 700.3px;
-    height: auto;
+    max-width: 60%; /* Логотип будет занимать максимум 80% ширины экрана */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
     filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5)); /* Тёмный ореол вместо белого */
     image-rendering: crisp-edges; /* Убирает размытие */
     background-color: transparent; /* Убеждаемся, что нет фонового цвета */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    .logo img {
+        max-width: 60%; /* Уменьшаем логотип на планшетах */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        max-width: 50%; /* Ещё меньше логотип на телефонах */
+    }
 }
 
 
