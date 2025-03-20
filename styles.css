@@ -7,6 +7,7 @@
     --shadow: rgba(255, 255, 255, 0.2);
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -48,18 +49,22 @@ body {
     to { opacity: 0; pointer-events: none; }
 }
 
-.logo {
-    font-size: 3rem;
-    color: var(--silver);
-    text-align: center;
-    text-shadow: 2px 2px 8px var(--shadow);
+.logo img {
+    width: 700.3px;
+    height: auto;
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5)); /* Тёмный ореол вместо белого */
+    image-rendering: crisp-edges; /* Убирает размытие */
+    background-color: transparent; /* Убеждаемся, что нет фонового цвета */
 }
+
+
 
 .chinese-char {
     color: var(--accent);
-    font-size: 4rem;
+    font-size: 3rem; /* Пропорционально уменьшил */
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.2); /* Свечение для символа */
 }
 
 main {
