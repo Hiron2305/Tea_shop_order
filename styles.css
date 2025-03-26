@@ -39,14 +39,18 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    gap: 20px;
+    max-width: 100%;
+    margin-bottom: 20px;
 }
 
 .tea-description img {
-    width: 150px;
+    width: 200px;
     height: auto;
     margin-right: 20px;
     border-radius: 10px;
 }
+
 
 .tea-text {
     max-width: 600px;
@@ -54,7 +58,13 @@ body {
 
 .tea-text h3 {
     margin: 0 0 10px;
-    font-size: 20px;
+    font-size: 1.5rem;
+}
+
+
+.tea-text p {
+    font-size: 1.2rem; /* Делаем текст крупнее */
+    line-height: 1.6; /* Увеличиваем читаемость */
 }
 
 .features-list {
@@ -70,6 +80,33 @@ body {
 @keyframes introFade {
     to { opacity: 0; pointer-events: none; }
 }
+
+
+.image-text-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 30%;
+}
+
+.image-gallery img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.text-content {
+    flex: 1;
+    text-align: left;
+}
+
+
+
 
 .logo img {
     max-width: 50%; /* Логотип будет занимать максимум 80% ширины экрана */
@@ -147,19 +184,33 @@ main {
 }
 
 .content-section {
-    max-width: 800px;
-    margin: 100px auto;
+    max-width: 75%;
+    margin: 80px auto;
     padding: 0 20px;
     display: grid;
     gap: 40px;
 }
 
 .content-block {
+    max-width: 100%;
     background: rgba(255, 255, 255, 0.05);
     padding: 30px;
     border-radius: 10px;
     border: 1px solid var(--accent);
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.text-content h2 {
+    font-size: 2rem; /* Было 1.5rem, увеличиваем */
+}
+
+.text-content p {
+    font-size: 1.2rem; /* Было 1rem */
+    line-height: 1.8; /* Увеличиваем межстрочный интервал для читаемости */
+}
+
+.content-section + .content-section {
+    margin-top: -20px; /* Слегка поджимаем секции друг к другу */
 }
 
 .ozon-button {
@@ -232,16 +283,36 @@ main {
     color: var(--text-main);
 }
 
+/* Адаптация для мобильных */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
+    .content-section {
+        max-width: 95%;
+    }
+    
+    .text-content h2 {
+        font-size: 1.8rem;
     }
 
-    .content-block {
-        padding: 20px;
+    .text-content p {
+        font-size: 1.1rem;
     }
 
-    .logo {
-        font-size: 2.5rem;
+    .tea-description {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tea-description img {
+        width: 100%; /* Растягиваем на всю ширину */
+        max-width: 300px;
+    }
+
+    .tea-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .tea-text p {
+        font-size: 1.1rem;
     }
 }
