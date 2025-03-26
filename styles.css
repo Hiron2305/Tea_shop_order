@@ -35,6 +35,28 @@ body {
     animation: introFade 1s 2s forwards;
 }
 
+.tea-description {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tea-description img {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.tea-text {
+    max-width: 600px;
+}
+
+.tea-text h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
 .features-list {
     list-style: none;
     margin-top: 10px;
