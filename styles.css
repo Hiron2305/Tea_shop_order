@@ -307,6 +307,10 @@ main {
         width: 100%; /* Растягиваем на всю ширину */
         max-width: 300px;
     }
+    .image-gallery{
+        width: 100%; /* Растягиваем на всю ширину */
+        max-width: 300px;
+    }
 
     .tea-text h3 {
         font-size: 1.3rem;
